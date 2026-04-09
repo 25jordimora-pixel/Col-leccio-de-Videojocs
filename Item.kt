@@ -6,3 +6,4 @@ abstract class Item(
 ) {
     abstract fun mostrarInfo(): String
 }
+

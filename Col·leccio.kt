@@ -39,3 +39,8 @@ class Colleccio(
         assert(nom.isNotEmpty()) { "El nom de la col·lecció no pot estar buit" }
     }
 }
+
+
+
+
+

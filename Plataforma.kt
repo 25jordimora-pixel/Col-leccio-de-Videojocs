@@ -4,7 +4,7 @@ class Plataforma(
     id: String,
     nom: String,
     var fabricant: String,
-    var anySortida: Int
+    var anySortida: String
 ) : Item(id, nom) {
 
     override fun mostrarInfo(): String {

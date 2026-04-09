@@ -27,7 +27,7 @@ class Usuari(
     init {
             // Aquests assertions serveixen per detectar errors en el desenvolupament de l'usuari
             assert(id.isNotEmpty()) { "L'ID de l'usuari no pot estar buit"}
-            assert(email.isNotEmpty()) { "L'ID de l'usuari no pot estar buit"}
+            assert(email.isNotEmpty()) { "L'email de l'usuari no pot estar buit"}
             assert(email.contains("@")) { "L'email ha de contenir @"}
 
         // Aquestes expressions regulars mostren si les dades són incorrectes
@@ -46,3 +46,4 @@ class Usuari(
         return regex.matches(email)
     }
 }
+
