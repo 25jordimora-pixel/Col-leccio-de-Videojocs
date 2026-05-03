@@ -1,7 +1,4 @@
-package org.example.model
-
-// Amb això validem aquelles daddes que son invàlides
-class DadesInvalidesException(message: String) : Exception(message)
+package org.example.models
 
 // Això és la classe Usuari, el qual hereta de Item
 class Usuari(
@@ -25,25 +22,12 @@ class Usuari(
 
     // Aquest bloc init serveix per validar dades en crear a l'usuari
     init {
-            // Aquests assertions serveixen per detectar errors en el desenvolupament de l'usuari
-            assert(id.isNotEmpty()) { "L'ID de l'usuari no pot estar buit"}
-            assert(email.isNotEmpty()) { "L'email de l'usuari no pot estar buit"}
-            assert(email.contains("@")) { "L'email ha de contenir @"}
-
-        // Aquestes expressions regulars mostren si les dades són incorrectes
         if (id.isEmpty()) {
-           throw DadesInvalidesException("L'ID no pot estar buit")
+            throw DadesInvalidesException("L'ID de l'usuari no pot estar buit")
         }
 
-        if (!validarEmail(email)) {
-            throw DadesInvalidesException("Email no vàlid")
+        if (!email.contains("@")) {
+            throw DadesInvalidesException("Email invàlid")
         }
-    }
-
-    // Aquesta funció serveix per validar l'email de l'usuari amb Regex
-    fun validarEmail(email: String): Boolean {
-        val regex = "^[A-Za-z0-9+_.-]+@(.+)$".toRegex()
-        return regex.matches(email)
     }
 }
-

@@ -1,21 +1,24 @@
 package org.example.repository
 
-// Implementació senzilla d'un repositori en memòria
-class JsonRepository<T> : Repository<T> {
+import java.io.File
 
-    // Llista interna per emmagatzemar dades
-    private val dades = mutableListOf<T>()
+class JsonRepository<T>(
+    private val fileName: String
+) : Repository<T> {
 
-    // Afegeix un element a la llista
+    private val file = File(fileName)
+
+    private val memory = mutableListOf<T>()
+
     override fun save(item: T) {
-        dades.add(item)
+        memory.add(item)
     }
 
-    // Retorna tots els elements emmagatzemats
-    override fun findAll(): List<T> = dades
+    override fun findAll(): List<T> {
+        return memory
+    }
 
-    // Mètode per eliminar un element segons identificador
     override fun delete(id: String) {
-        // Implementació pendent segons el tipus de dada
+        println("Delete no implementat")
     }
 }

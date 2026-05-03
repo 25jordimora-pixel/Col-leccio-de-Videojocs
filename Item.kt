@@ -1,4 +1,4 @@
-package org.example.model
+package org.example.models
 
 abstract class Item(
     val id: String,
@@ -6,4 +6,3 @@ abstract class Item(
 ) {
     abstract fun mostrarInfo(): String
 }
-

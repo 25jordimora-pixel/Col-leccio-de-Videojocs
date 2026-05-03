@@ -1,4 +1,4 @@
-package org.example.model
+package org.example.models
 
 class Colleccio(
     var nom: String
@@ -7,7 +7,7 @@ class Colleccio(
 
     fun afegirJoc(joc: Videojoc) {
         if (videojocs.any { it.id == joc.id }) {
-            throw ElementDuplicatException("El videojoc amb id ${joc.id} ja existeix")
+            throw ElementDuplicatException("Ja existeix")
         }
         videojocs.add(joc)
     }
@@ -39,8 +39,3 @@ class Colleccio(
         assert(nom.isNotEmpty()) { "El nom de la col·lecció no pot estar buit" }
     }
 }
-
-
-
-
-
